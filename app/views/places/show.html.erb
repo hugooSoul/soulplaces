@@ -1,42 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
 
-<p>
-  <strong>Name:</strong>
-  <%= @place.name %>
-</p>
+  <div class="col-md-4">
+    <h3><%= @place.name %></h3>
+    <p><strong>Adress</strong>
+      <%= @place.address %></p>
+    <p><strong>Phone</strong>
+      <%= @place.phone %></p>
+    <p><strong>Website</strong>
+      <%= @place.website %></p>
+    <p><strong>Description</strong>
+      <%= @place.description %></p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @place.address %>
-</p>
+    <div id="map_canvas" style="width:230px; height:230px"></div>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @place.description %>
-</p>
+  <div class="col-md-8">
 
-<p>
-  <strong>Phone:</strong>
-  <%= @place.phone %>
-</p>
+    <h3>Reviews by People</h3>
 
-<p>
-  <strong>Website:</strong>
-  <%= @place.website %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @place.user_id %>
-</p>
+  </div>
+</div>
 
-<%= @place.latitude %>
-<%= @place.longitude %>
-
-<div id="map_canvas" style="width:230px; height:230px"></div>
-
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
 
 <script type="text/javascript">
       function initialize() {
