@@ -30,5 +30,28 @@
   <%= @place.user_id %>
 </p>
 
+<%= @place.latitude %>
+<%= @place.longitude %>
+
+<div id="map_canvas" style="width:230px; height:230px"></div>
+
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>
+
+<script type="text/javascript">
+      function initialize() {
+        //var mycenter = {<%= @place.latitude %>, <%= @place.longitude %>}
+        var mycenter2 = new google.maps.LatLng(<%= @place.latitude %>, <%= @place.longitude %>)
+        var mapOptions = {
+          center: mycenter2,
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+        var marker = new google.maps.Marker({
+          position: mycenter2,
+          map: map
+        });
+      }
+</script>

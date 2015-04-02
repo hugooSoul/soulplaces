@@ -5,8 +5,11 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCeu4DR5ABrEuUwmL0taA31_5FFJ08Tt4I&sensor=FALSE">
+    </script>
 </head>
-<body>
+<body onload="initialize()">
 
 <%= render 'layouts/header' %>
 <% flash.each do |type, message| %>
